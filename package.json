@@ -6,6 +6,7 @@
   "description": "Simple Discord Bot Framework",
   "license": "MIT",
   "version": "1.0.0-dev",
+  "typings": "dist/types/index.d.ts",
   "scripts": {
     "build": "tsc -p src",
     "lint": "eslint --cache --report-unused-disable-directives --ignore-path .gitignore --ext .ts src/",
