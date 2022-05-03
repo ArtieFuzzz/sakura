@@ -21,8 +21,27 @@ export namespace Command {
 }
 
 export abstract class Command extends AliasPiece<CommandOptions> {
+  /**
+   * Command description
+   * 
+   * @since 1.0.0
+   */
   public readonly description: string | null
+
+  /**
+   * Whether this command should be only ran in NSFW channels
+   * 
+   * @since 1.0.0
+   * @default false
+   */
   public readonly nsfw: boolean
+
+  /**
+   * Restricts this command to DMs or Guild Text Channels
+   * 
+   * @since 1.0.0
+   * @default null
+   */
   public readonly restrictTo: Restrict | null
   constructor(context: AliasPiece.Context, options: CommandOptions) {
     super(context, options)
@@ -32,7 +51,7 @@ export abstract class Command extends AliasPiece<CommandOptions> {
     this.restrictTo = options.restrictTo ?? null
   }
 
-  public abstract run(message: Message, args: string[]): Awaitable<unknown>
+  public abstract run(message: Message, args: Array<string>): Awaitable<unknown>
 
   public toJSON(): CommandToJSON {
     return {
