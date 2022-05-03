@@ -1,0 +1,10 @@
+{
+  "extends": "@artiefuzzz/eslint-config",
+  "parserOptions": {
+    "project": "./tsconfig.eslint.json"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "no-extra-parens": "off"
+  }
+}

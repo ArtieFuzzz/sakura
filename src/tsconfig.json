@@ -1,0 +1,10 @@
+{
+  "extends": "@artiefuzzz/ts",
+  "compilerOptions": {
+    "target": "ESNext",
+    "outDir": "../dist",
+    "declaration": true,
+    "declarationDir": "../dist/types"
+  },
+  "include": ["."]
+}
