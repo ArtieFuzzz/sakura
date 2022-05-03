@@ -3,6 +3,7 @@
 > Simple Discord bot Framework
 
 This framework has not been tested yet.
+This framework is not production ready.
 
 ## Installation
 
