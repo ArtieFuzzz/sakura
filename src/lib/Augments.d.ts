@@ -1,7 +1,7 @@
 import type { ILogger } from 'fuwa'
 import type { SakuraClient } from './Client'
-import type { CommandStore } from './structures/CommandStore'
-import type { ListenerStore } from './structures/ListenerStore'
+import type CommandStore from './structures/CommandStore'
+import type ListenerStore from './structures/ListenerStore'
 
 declare module '@sapphire/pieces' {
   interface Container {

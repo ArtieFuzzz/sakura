@@ -1,6 +1,9 @@
 import { container, StoreRegistry } from '@sapphire/pieces'
 import type { ClientOptions } from 'fuwa'
 import * as Fuwa from 'fuwa'
+import { join } from 'path'
+import CommandStore from './structures/CommandStore'
+import ListenerStore from './structures/ListenerStore'
 
 export class SakuraClient extends Fuwa.Client {
   /**
@@ -27,6 +30,10 @@ export class SakuraClient extends Fuwa.Client {
     container.logger = this.logger
 
     this.prefix = options.prefix
+
+    this.stores
+      .register(new CommandStore())
+      .register(new ListenerStore().registerPath(join(__dirname, '..', 'listeners')))
   }
 
   public async login(): Promise<void> {

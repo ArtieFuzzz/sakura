@@ -1,9 +1,10 @@
 import { Piece } from '@sapphire/pieces'
 import type { Awaitable } from '@sapphire/utilities'
 import type EventEmitter from 'events'
+import type { ClientEvents } from 'fuwa'
 
 export interface ListenerOptions extends Piece.Options {
-  emitter: EventEmitter | null
+  emitter?: EventEmitter | null
   event: string
   once?: boolean
 }
@@ -14,7 +15,13 @@ export interface ListenerToJSON extends Piece.JSON {
   once: boolean
 }
 
-export abstract class Listener extends Piece<ListenerOptions> {
+export namespace Listener {
+  export type Options = ListenerOptions
+  export type JSON = ListenerToJSON
+  export type Context = Piece.Context
+}
+
+export abstract class Listener<E extends keyof ClientEvents | string = ''> extends Piece<ListenerOptions> {
   /**
    * Where the Event will be emitted from
    * 
@@ -43,7 +50,7 @@ export abstract class Listener extends Piece<ListenerOptions> {
     super(context, options)
 
     this.emitter = options.emitter ?? this.container.client
-    this.event = options.event
+    this.event = options.event ?? this.name
     this.once = options.once ?? false
 
     this._listener = this.event && this.emitter ? this._run.bind(null, this) : null
@@ -51,7 +58,7 @@ export abstract class Listener extends Piece<ListenerOptions> {
     if (!this._listener) this.enabled = false
   }
 
-  public abstract run(...args: unknown[]): Awaitable<unknown>
+  public abstract run(...args: E extends keyof ClientEvents ? ClientEvents[E] : unknown[]): Awaitable<unknown>
 
   public onLoad(): unknown {
     if (this._listener) {
@@ -62,6 +69,7 @@ export abstract class Listener extends Piece<ListenerOptions> {
   }
 
   private async _run(...args: unknown[]): Promise<void> {
+    // @ts-ignore
     await this.run(args)
     if (this.once) await this.unload()
   }
