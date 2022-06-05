@@ -4,12 +4,12 @@ export enum Restrict {
 }
 
 export enum Events {
-  MessageCreate = 'messages.create',
-  MessageDelete = 'messages.delete',
-  MessageUpdate = 'messages.update',
-  GuildCreate = 'guilds.create',
-  GuildDelete = 'guilds.delete',
-  GuildUpdateuildDelete = 'guilds.delete',
+  MessageCreate = 'messageCreate',
+  MessageDelete = 'messageDelete',
+  MessageUpdate = 'messageUpdate',
+  GuildCreate = 'guildCreate',
+  GuildDelete = 'guildRelete',
+  GuildUpdate = 'guildDelete',
   Ready = 'ready',
 
   CommandRun = 'commandRun',
