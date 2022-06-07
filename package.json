@@ -7,6 +7,10 @@
   "license": "MIT",
   "version": "1.0.0-dev",
   "typings": "dist/types/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
   "scripts": {
     "build": "tsc -p src",
     "lint": "eslint --cache --report-unused-disable-directives --ignore-path .gitignore --ext .ts src/",
@@ -25,16 +29,16 @@
     "@sapphire/utilities": "^3.6.2",
     "fuwa": "^0.0.1"
   },
+  "homepage": "https://github.com/ArtieFuzzz/sakura#readme",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ArtieFuzzz/sakura.git"
   },
-  "keywords": [
-    "discord",
-    "fuwa"
-  ],
   "bugs": {
     "url": "https://github.com/ArtieFuzzz/sakura/issues"
   },
-  "homepage": "https://github.com/ArtieFuzzz/sakura#readme"
+  "keywords": [
+    "discord",
+    "fuwa"
+  ]
 }
