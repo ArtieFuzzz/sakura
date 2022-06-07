@@ -17,3 +17,10 @@ export enum Events {
   PreCommandRun = 'preCommandRun',
   UnknownCommand = 'unknownCommandRun',
 }
+
+export enum PluginHook {
+  PreInitialize = 'preInitialize',
+  PostInitialize = 'postInitialize',
+  PreLogin = 'preLogin',
+  PostLogin = 'postLogin'
+}
