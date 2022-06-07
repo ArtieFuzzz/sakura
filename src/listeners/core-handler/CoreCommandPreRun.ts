@@ -1,7 +1,6 @@
-import type { GuildChannel, Message } from 'fuwa'
+import type { Message } from 'fuwa'
 import { Listener } from '../../lib/structures/Listener'
-import { UserError } from '../../lib/structures/UserError'
-import { Events, Restrict } from '../../lib/types/Enums'
+import { Events } from '../../lib/types/Enums'
 
 export default class CoreListener extends Listener {
   public readonly prefix: string
@@ -23,16 +22,6 @@ export default class CoreListener extends Listener {
 
     if (!command) {
       return this.container.client.emit(Events.UnknownCommand, { commandName })
-    }
-
-    if (command.nsfw &&( message.channel as GuildChannel).nsfw) {
-      throw new UserError('This command can only be ran in NSFW channels')
-    }
-
-    if (command.restrictTo === Restrict.DM && !message.channel.isDM()) {
-      throw new UserError('This command can only be ran in DMs')
-    } else if (command.restrictTo === Restrict.TextChannel && !message.channel.isText()) {
-      throw new UserError('This command can only be ran in Guild Text channels')
     }
 
     return this.container.client.emit(Events.CommandRun, { message, command, args })

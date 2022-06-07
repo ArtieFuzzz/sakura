@@ -1,1 +1,6 @@
 export * from './lib/Client'
+export * from './lib/types/Enums'
+export * from './lib/types/Payloads'
+export * from './lib/structures/Command'
+export * from './lib/structures/Listener'
+export * from './lib/structures/UserError'

@@ -13,6 +13,7 @@ export enum Events {
   Ready = 'ready',
 
   CommandRun = 'commandRun',
+  CommandFailed = 'commandFailed',
   PreCommandRun = 'preCommandRun',
   UnknownCommand = 'unknownCommandRun',
 }
