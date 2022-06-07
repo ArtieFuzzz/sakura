@@ -9,10 +9,11 @@ export enum Events {
   MessageUpdate = 'messages.update',
   GuildCreate = 'guilds.create',
   GuildDelete = 'guilds.delete',
-  GuildUpdateuildDelete = 'guilds.delete',
+  GuildUpdate = 'guilds.delete',
   Ready = 'ready',
 
   CommandRun = 'commandRun',
+  CommandFailed = 'commandFailed',
   PreCommandRun = 'preCommandRun',
   UnknownCommand = 'unknownCommandRun',
 }
