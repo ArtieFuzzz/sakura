@@ -1,5 +1,5 @@
 {
-  "name": "sakura",
+  "name": "@artiefuzzz/sakura",
   "packageManager": "yarn@3.2.1",
   "main": "dist/index",
   "author": "Artie Fuzzz",
