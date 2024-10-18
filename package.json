@@ -1,6 +1,6 @@
 {
   "name": "@artiefuzzz/sakura",
-  "packageManager": "yarn@3.2.1",
+  "packageManager": "yarn@4.5.1",
   "main": "dist/index",
   "author": "Artie Fuzzz",
   "description": "Simple Discord Bot Framework",
