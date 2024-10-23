@@ -26,7 +26,7 @@ __metadata:
     "@sapphire/pieces": ^3.3.1
     "@sapphire/result": ^1.1.1
     "@sapphire/utilities": ^3.6.2
-    "@types/node": 17.0.31
+    "@types/node": 20.17.0
     eslint: 8.18.0
     fuwa: ^0.0.1
     typescript: 4.7.4
@@ -175,10 +175,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:17.0.31":
-  version: 17.0.31
-  resolution: "@types/node@npm:17.0.31"
-  checksum: 704618350f8420d5c47db0f7778398e821b7724369946f5c441a7e6b9343295553936400eb8309f0b07d5e39c240988ab3456b983712ca86265dabc9aee4ad3d
+"@types/node@npm:20.17.0":
+  version: 20.17.0
+  resolution: "@types/node@npm:20.17.0"
+  dependencies:
+    undici-types: ~6.19.2
+  checksum: 01234eb8a5ba7e3e4324f74c6b7354d8f37fc8eb29eddaf595bcf172bdfb32184be0a5721ee54bc8440562a4037f322eb967550e3b0b6402d0e14fcb7eb6d98b
   languageName: node
   linkType: hard
 
@@ -1280,6 +1282,13 @@ __metadata:
     tsc: bin/tsc
     tsserver: bin/tsserver
   checksum: 9096d8f6c16cb80ef3bf96fcbbd055bf1c4a43bd14f3b7be45a9fbe7ada46ec977f604d5feed3263b4f2aa7d4c7477ce5f9cd87de0d6feedec69a983f3a4f93e
+  languageName: node
+  linkType: hard
+
+"undici-types@npm:~6.19.2":
+  version: 6.19.8
+  resolution: "undici-types@npm:6.19.8"
+  checksum: de51f1b447d22571cf155dfe14ff6d12c5bdaec237c765085b439c38ca8518fc360e88c70f99469162bf2e14188a7b0bcb06e1ed2dc031042b984b0bb9544017
   languageName: node
   linkType: hard
 
